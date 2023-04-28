@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Pet Directory</title>
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com" />
+
+    <style>
+      table {
+        background-color: lightgrey;
+        min-width: 100%;
+      }
+      th:first-child,
+      td:first-child {
+        font-weight: bold;
+      }
+      .yellow-box {
+        background-color: orange;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="yellow-box py-7">
+      <h1 class="text-black text-2xl font-bold text-center">Pet Store Manager</h1>
+    </div>
+
+    <table class="border-spacing-4 border border-slate-500 mt-4">
+      <thead class="text-left text-[1.5rem] leading-11 text-zinc-1250">
+        <tr>
+          <th class="border border-slate-550" >Name</th>
+          <th class="border border-slate-550">Species</th>
+          <th class="border border-slate-550">Breed</th>
+          <th class="border border-slate-550">Owner Last Name</th>
+          <th class="border border-slate-550">Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= for pet <-@pets do %>
+        <tr>
+          <td class="border border-slate-550"><%= pet.name %></td>
+          <td class="border border-slate-550"><%= pet.species%></td>
+          <td class="border border-slate-550"><%= pet.breed %></td>
+          <td class="border border-slate-550"><%= pet.owners_last_name %></td>
+          <td class="border border-slate-550"><%= pet.age %></td>
+        </tr>
+        <%end %>
+      </tbody>
+    </table>
+  </body>
+</html>
